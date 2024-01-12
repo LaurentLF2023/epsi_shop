@@ -85,8 +85,6 @@ class DetailWidget extends StatelessWidget {
               .addArticle(article),
                 child: const Text('Ajouter')
           ),
-
-
         ],
       ),
     );

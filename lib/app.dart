@@ -18,6 +18,10 @@ final _router = GoRouter(
           builder: (_,__) => CartPage(),
         ),
         GoRoute(
+            path: 'confirm-purchase',
+            builder (_,__) => ConfirmPurchase(),
+        ),
+        GoRoute(
           path: 'about-us',
           builder: (_,__) => AboutUsPage(),
         ),
