@@ -1,6 +1,5 @@
 import 'package:epsi_shop/bo/article.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../bo/cart.dart';
@@ -39,8 +38,6 @@ class EmptyCart extends StatelessWidget {
   const EmptyCart({
     super.key,
   });
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +95,6 @@ class ListCart extends StatelessWidget {
               ],
             ),
           ),
-          // ajouter la ligne de total ( row panier total  montant )
           Flexible(
             child: ListView.builder(
                 itemCount: cart.items.length,
@@ -117,7 +113,8 @@ class ListCart extends StatelessWidget {
               ),
           ),
         ],
-      ));
+      )
+    );
   }
 }
 
