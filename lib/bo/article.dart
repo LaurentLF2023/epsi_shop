@@ -2,7 +2,7 @@ class Article {
   //construct avec named parameters and required
   String nom;
   String description;
-  num prix = 0;
+  num prix;
   String image;
   String categorie;
 
@@ -39,20 +39,4 @@ class Article {
       categorie: map['category'] as String,
     );
   }
-}
-
-List getArticleList(){
-  List articleList = [];
-
-  for (var i = 0; i < 10; i++){
-    articleList.add( Article(
-        nom: "nom$i",
-        description: "description$i",
-        prix: i*10+12,
-        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$i.png",
-        categorie: "categorie$i")
-    );
-  }
-
-  return articleList;
 }

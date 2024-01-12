@@ -24,13 +24,6 @@ class CartPage extends StatelessWidget {
           child:
             context.watch<Cart>().items.isNotEmpty ? ListCart() : EmptyCart(),
       ),
-     floatingActionButton: FilledButton(
-        onPressed: () => context.go('/confirm-purchase'),
-        style: FilledButton.styleFrom(
-            backgroundColor: Theme.of(context).colorScheme.primary),
-        child: const Text('Procéder au paiement'),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
@@ -85,13 +78,14 @@ class ListCart extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Row(
               children: [
-                Text("Votre panier total est de",
+                const Text("Votre panier total est de",
                     style: TextStyle(fontWeight: FontWeight.bold)),
-                Spacer(),
+                const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(right:20.0),                  child: Text( "${cart.items.fold<num>(0, (previousValue, Article article) =>
+                  padding: const EdgeInsets.only(right:20.0),
+                  child: Text( "${cart.items.fold<num>(0, (previousValue, Article article) =>
                     previousValue + article.prix)}€",
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
                 )
               ],
             ),
@@ -104,7 +98,7 @@ class ListCart extends StatelessWidget {
                       title: Text(cart.items[index].nom,
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      subtitle: Text(cart.items[index].description+ ' ' + cart.items[index].getPrix()),
+                      subtitle: Text(cart.items[index].getPrix()),
                       trailing: TextButton(
                           onPressed: () => context.read<Cart>()
                               .removeArticle(cart.items[index]),
@@ -113,8 +107,14 @@ class ListCart extends StatelessWidget {
                   )
               ),
           ),
+          FilledButton(
+            onPressed: () => context.go('/confirm-purchase'),
+            style: FilledButton.styleFrom(
+                backgroundColor: Theme.of(context).colorScheme.primary),
+            child: const Text('Procéder au paiement'),
+          ),
         ],
-      )
+      ),
     );
   }
 }
