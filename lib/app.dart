@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Epsi Shop',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
         useMaterial3: true,
       ),
       routerConfig: _router,

@@ -89,10 +89,26 @@ class ItemArticle extends StatelessWidget {
       // modifier le title avec un text + gesture detector OnTape
       title: TextButton(
         onPressed: () => context.go('/detail', extra:myArticleList[index]),
-        child: Text('${myArticleList[index].nom}',
-            style: const TextStyle(fontWeight: FontWeight.bold)
-      ),),
-      subtitle: Text(myArticleList[index].getPrix()),
+        child: Column(
+          children: [
+            Text('${myArticleList[index].nom}',
+                style: const TextStyle(
+                    color: Colors.black
+                ),
+            ),
+            Row(
+              children: [
+                Text(myArticleList[index].getPrix(),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black)
+                ),
+                Spacer()
+              ],
+            )
+          ],
+        ),
+      ),
       trailing: TextButton(
         onPressed: () => context.read<Cart>()
             .addArticle(myArticleList[index]),
