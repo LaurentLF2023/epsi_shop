@@ -28,7 +28,18 @@ class ConfirmPurchasePage extends StatelessWidget {
             ),
           Row(
             children: [
-              Text("Adresse de livraison"),
+              Padding(
+                padding: const EdgeInsets.only(left:8),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top:2),
+                      child: Text("Adresse de livraison",
+                          style: TextStyle(fontWeight: FontWeight.w800)),
+                    ),
+                  ],
+                ),
+              ),
               Spacer(),
             ],
           ),
@@ -40,27 +51,31 @@ class ConfirmPurchasePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   side: BorderSide(color: Theme.of(context).colorScheme.outline),
                 ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text("Michel le Poney"),
-                        Spacer(),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("8 rue des ouvertures de portes"),
-                        Spacer()
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("93204 CORBEAUX"),
-                        Spacer(),
-                      ],
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text("Michel le Poney",
+                              style: TextStyle(fontWeight: FontWeight.w800)),
+                          Spacer(),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("8 rue des ouvertures de portes"),
+                          Spacer()
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("93204 CORBEAUX"),
+                          Spacer(),
+                        ],
+                      ),
+                    ],
+                  ),
                 )
             ),
           ),
