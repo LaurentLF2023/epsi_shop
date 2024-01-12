@@ -13,6 +13,17 @@ class _ConfirmPurchasePage extends State<ConfirmPurchasePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: const Color(0xFFFFE306));
+    return Scaffold(
+        appBar: AppBar(
+          title: const Row(
+              children: [
+                Text("Finalisation de la commande",
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                Spacer(),
+              ]
+          ),
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        )
+    );
   }
 }

@@ -13,7 +13,6 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(
         title: const Row(
           children: [
-            Spacer(),
             Text("Panier EPSI Shop",
             style: TextStyle(fontWeight: FontWeight.bold)),
             Spacer(),
@@ -27,6 +26,8 @@ class CartPage extends StatelessWidget {
       ),
      floatingActionButton: FilledButton(
         onPressed: () => context.go('/confirm-purchase'),
+        style: FilledButton.styleFrom(
+            backgroundColor: Theme.of(context).colorScheme.primary),
         child: const Text('Procéder au paiement'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
