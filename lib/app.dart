@@ -1,5 +1,6 @@
 import 'package:epsi_shop/page/about_us_page.dart';
 import 'package:epsi_shop/page/cart_page.dart';
+import 'package:epsi_shop/page/confirm_purchase_page.dart';
 import 'package:epsi_shop/page/detail_page.dart';
 import 'package:epsi_shop/page/home_page.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ final _router = GoRouter(
         ),
         GoRoute(
             path: 'confirm-purchase',
-            builder (_,__) => ConfirmPurchase(),
+            builder: (_,__) => ConfirmPurchasePage(),
         ),
         GoRoute(
           path: 'about-us',

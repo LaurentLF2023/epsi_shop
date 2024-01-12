@@ -1,5 +1,7 @@
 import 'package:epsi_shop/bo/article.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../bo/cart.dart';
 
@@ -21,8 +23,14 @@ class CartPage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SafeArea (
-          child: context.watch<Cart>().items.isNotEmpty ? ListCart() : EmptyCart()
+          child:
+            context.watch<Cart>().items.isNotEmpty ? ListCart() : EmptyCart(),
       ),
+     floatingActionButton: FilledButton(
+        onPressed: () => context.go('/confirm-purchase'),
+        child: const Text('Procéder au paiement'),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
